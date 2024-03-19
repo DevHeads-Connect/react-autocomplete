@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash
 
 if [ -n "$(git status --porcelain)" ]; then
     echo "Working directory is not clean!"
@@ -10,13 +10,13 @@ if [ -z "$1" ]; then
 fi
 read -n1 -p "Have you remembered to update the CHANGELOG? (y/n) " answer
 if [ "$answer" = 'y' -o "$answer" = 'Y' ]; then
-    npm run generate-readme
+    yarn run generate-readme
     if [ -n "$(git status --porcelain)" ]; then
         git commit README.md -m 'Update README'
     fi
     npm version $1
-    npm run build:component
-    npm publish
+    yarn run build:component
+    yarn publish
     git push origin master --follow-tags
 else
     exit 1

@@ -1,8 +1,9 @@
-#!/bin/sh -e
+#!/bin/bash
 
 export NODE_ENV=production
 mkdir -p build/lib dist
 babel lib/{index,Autocomplete}.js -d build/
+cp lib/index.d.ts build/lib/
 cd dist
 browserify ../lib/Autocomplete.js \
     --transform babelify \

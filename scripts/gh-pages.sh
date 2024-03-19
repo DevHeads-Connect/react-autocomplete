@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash
 
 if [ -n "$(git status --porcelain)" ]; then
     echo "Working directory is not clean!"

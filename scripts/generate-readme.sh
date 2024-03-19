@@ -1,3 +1,3 @@
-#!/bin/sh -e
+#!/bin/bash
 
 node bin/generate-readme.js

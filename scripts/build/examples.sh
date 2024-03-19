@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash
 
 cd examples
 mkdir -p __build__
